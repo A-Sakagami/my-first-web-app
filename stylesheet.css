@@ -1,271 +1,208 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: "Hiragino Kaku Gothic ProN";
-}
-
-a {
-  text-decoration: none;
-}
-
-.container {
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-.top-wrapper {
-  padding: 180px 0 100px 0;
-  background-image: url(top.png);
-  background-size: cover;
-  color: white;
-  text-align: center;
-}
-
-.top-wrapper h1 {
-  opacity: 0.7;
-  font-size: 45px;
-  letter-spacing: 5px;
-}
-
-.top-wrapper p {
-  opacity: 0.7;
-  font-size: 16px;
-  margin-bottom: 40px;
-}
-
-.btn-wrapper {
-  text-align: center;
-}
-
-.btn-wrapper p {
-  margin-bottom: 20px;
-}
-
-.signup {
-  background-color: #239b76;
-}
-
-.facebook {
-  background-color: #3b5998;
-  margin-right: 10px;
-}
-
-.twitter {
-  background-color: #55acee;
-}
-
-.btn {
-  padding: 8px 24px;
-  color: white;
-  display: inline-block;
-  opacity: 0.8;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.btn:hover {
-  opacity: 1;
-}
-
-.fa {
-  margin-right: 5px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 header {
-  height: 65px;
-  width: 100%;
-  background-color: rgba(34,49,52,0.9);
-  position :fixed;
-  top: 0;
-  z-index: 10;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
+	background-color: #263b4a;
+	color: #fff;
+	z-index: 100;
 }
 
-.logo {
-  width: 124px;
-  margin-top: 20px;
+.header-content {
+	display: flex; /* navとtitleをコンテナ内に表示させる　*/
+	align-items: center; /* 垂直方向の中央揃え */
+	justify-content: space-between;
+	height: 100%;
 }
 
-.header-left {
-  float: left;
+.header-title {
+    padding: 0 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}    
+
+.header-nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-.header-right {
-  float: right;
-  margin-right: -25px;
+.header-nav-button a{
+    display: flex;
+    align-items: center;
+    height: 40px; /* ホバー時に色が変わる領域の高さを指定 */
+    padding: 0 16px;
+    color: #fff;
+    text-decoration: none;
 }
 
-.header-right a {
-  line-height: 65px;
-  padding: 0 25px;
-  color: white;
-  display: block;
-  float: left;
-  transition: all 0.5s;
-}
-
-.header-right a:hover {
-  background-color: rgba(255,255,255,0.3);
-}
-
-.lesson-wrapper {
-  height: 580px;
-  padding-bottom: 80px;
-  padding-left: 5%;
-  padding-right: 5%;
-  background-color: #f7f7f7;
-  text-align: center;
-}
-
-.heading {
-  padding-top: 80px;
-  padding-bottom: 50px;
-  color: #5f5d60;
-}
-
-.heading h2 {
-  font-weight: normal;
-}
-
-.lesson {
-  float: left;
-  width: 25%;
-}
-
-.lesson-icon {
-  position: relative;
-}
-
-.lesson-icon p {
-  position: absolute;
-  top: 37%;
-  width: 100%;
-  color: white;
-}
-
-.text-contents {
-  width: 80%;
-  display: inline-block;
-  margin-top: 15px;
-  font-size: 13px;
-  color: #b3aeb5;
-}
-
-.heading h3 {
-  font-weight: normal;
-}
-
-.message-wrapper {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 80px;
-  text-align: center;
-}
-
-.message {
-  padding: 15px 40px;
-  background-color: #5dca88;
-  cursor: pointer;
-  box-shadow: 0px 7px #1a7940;
-}
-
-.message:active {
-  position: relative;
-  top: 7px;
-  box-shadow: none;
-}
-
-footer img {
-  width: 125px;
-}
-
-footer p {
-  color: #b3aeb5;
-  font-size: 12px;
+.header-nav-button:hover{
+    background-color: #5a8caf;
+    transition: background-color 0.5s ease;
 }
 
 footer {
-  padding-top: 30px;
-  padding-bottom: 20px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	background-color: #263b4a;
+	color: #fff;
+	z-index: 100;
 }
 
-.menu-icon {
-  color: white;
-  float: right;
-  font-size: 25px;
-  padding: 21px 0;
-  display: none;
+.sidebar {
+	position: fixed;
+	top: 60px;
+	bottom: 50px;
+	width: 240px;
+	padding: 20px;
+	background-color: #f3f6f8;
+	border: 1px solid #d8e0e6;
+	overflow-y: auto;
 }
 
-.clear {
-  clear: left;
+.sidebar-left {
+	left: 0;
 }
 
-@media all and (max-width: 1000px) {
-  .lesson {
-    width: 50%;
-    margin-bottom: 50px;
-  }
-
-  .lesson-wrapper {
-    height: 990px;
-  }
-
-  footer {
-    text-align: center;
-  }
+.sidebar-right {
+	right: 0;
 }
 
-@media all and (max-width: 750px) {
-  .top-wrapper h1 {
-    font-size: 32px;
-  }
-
-  .heading h2 {
-    font-size: 20px;
-  }
+.toggle-btn {
+	display: none;
 }
 
-@media all and (max-width: 670px) {
-  .header-right {
-    display: none;
-  }
+main {
+	margin-top: 60px;
+	margin-bottom: 50px;
+	margin-left: 240px;
+	margin-right: 240px;
+	padding: 20px;
+	min-height: calc(100vh - 110px);
+}
 
-  .menu-icon {
-    display: block;
-  }
+.sidebar h2 {
+	margin-bottom: 12px;
+	padding-bottom: 8px;
+	border-bottom: 2px solid #b8cbd8;
+	color: #263b4a;
+	font-size: 1.1rem;
+}
 
-  .top-wrapper .btn {
-    width: 100%;
-  }
+.sidebar ul {
+	list-style: none;
+}
 
-  .twitter {
-    margin-top: 10px;
-  }
+.sidebar li + li {
+	margin-top: 6px;
+}
 
-  .top-wrapper {
-    text-align: left;
-  }
+.sidebar a {
+	display: block;
+	padding: 9px 10px;
+	border-radius: 5px;
+	color: #245b78;
+	text-decoration: none;
+}
 
-  .top-wrapper h1 {
-    font-size: 24px;
-  }
+.sidebar a:hover {
+	background-color: #dceaf1;
+	text-decoration: underline;
+}
 
-  .top-wrapper p {
-    font-size: 14px;
-  }
 
-  .lesson {
-    width: 100%;
-  }
+/* ハンバーガーメニューのスタイル */
+.hamburger-menu {
+    display: none;            /* 通常時は非表示 */
+    align-items: center;
+    justify-content: center;
+    background: transparent;  /* ボタンのデフォルト背景を消す */
+    border: none;             /* ボタンのデフォルト枠線を消す */
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+}
 
-  .lesson-wrapper {
-    height: 1700px;
-  }
+/* Font Awesomeアイコンのサイズと色 */
+.hamburger-menu i {
+    font-size: 1.5rem;
+    color: #fff;
+}
 
-  .message-wrapper .btn {
-    width: 100%;
-  }
+/* レスポンシブデザイン: タブレット・スマートフォン向け */
+@media screen and (max-width: 768px) {
+
+    /* ハンバーガーボタンを表示し、header右上に配置 */
+    .hamburger-menu {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    /* ナビメニューを画面右外に隠す（初期状態）
+       activeクラスが付いたときだけスライドインさせる */
+    .header-nav-links {
+        display: flex;
+        flex-direction: column;       /* リンクを縦並びにする */
+        justify-content: flex-start;  /* 上から順に並べる */
+        position: fixed;
+        top: 0;
+        right: -100%;                 /* 画面右外に隠す */
+        width: 70%;
+        height: 100vh;                /* 画面の高さいっぱいに広げる */
+        background-color: #fff;
+        padding-top: 80px;            /* headerと重ならないように上部に余白 */
+        transition: right 0.3s ease;  /* スライドアニメーション */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 999;                 /* headerより手前に表示 */
+    }
+
+    /* activeクラスが付いたら画面内にスライドイン */
+    .header-nav-links.active {
+        right: 0;
+    }
+
+    /* 各ナビ項目を横幅いっぱいに広げ、区切り線を追加 */
+    .header-nav-button {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* リンクをタップしやすい高さにし、文字色をメニュー背景に合わせる */
+    .header-nav-button a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        padding: 0;
+        color: #263b4a;
+    }
+
+    /* ホバー時の背景色をメニュー用に上書き */
+    .header-nav-button:hover {
+        background-color: #dceaf1;
+    }
 }
